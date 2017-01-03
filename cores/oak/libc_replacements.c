@@ -291,9 +291,7 @@ double strtod(const char* str, char** endptr) {
     result *= factor;
 
     if (exponent) {
-      for (double i = 0; i < exponent; i++) {
-          multiplier *= 10; 
-      }
+      multiplier = pow(10, exponent); 
       if (exp_factor) result *= multiplier;
       else result /= multiplier;
     }
